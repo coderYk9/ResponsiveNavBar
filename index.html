@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        }
+
+        header {
+            background-image: url(./images/landscape.jpg);
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
+        }
+    </style>
+    <title>Responsive NavBar</title>
+</head>
+
+<body>
+    <nav class="w-full absolute mx-auto md:p-12">
+        <div class="flex items-center justify-between text-white">
+            <div class="py-6 px-8 md:p-0" id="logo">
+                <a class="font-bold text-3xl" href="#">#CoderYkDz</a>
+            </div>
+
+            <div id="nav-links" class="absolute w-full h-screen top-0 left-0 -ml-[100%]
+                bg-gray-200/20 backdrop-blur-sm font-medium text-xl transition-all duration-[0.5s]
+                flex flex-col gap-10 items-center justify-center
+                md:static md:w-auto md:h-auto md:bg-transparent md:backdrop-blur-none md:text-sm md:flex-row md:gap-8">
+                <a class="hover:underline" href="#">Home</a>
+                <a class="hover:underline" href="#">Info</a>
+                <a class="hover:underline" href="#">Service</a>
+                <a class="text-[#ed3c57] font-bold hover:underline" href="#">Support</a>
+                <a class="hover:underline" href="#">Contact</a>
+            </div>
+
+            <div id="menu-hamburger" class="absolute top-8 right-8 md:hidden">
+                <img src="./images/menu-btn.png" alt="menu hamburger" class="w-[2.1rem]">
+            </div>
+        </div>
+    </nav>
+    <header></header>
+</body>
+
+<script>
+    const menuHamburger = document.querySelector("#menu-hamburger");
+    const navLinks = document.querySelector("#nav-links");
+
+    menuHamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('-ml-[100%]');
+    });
+</script>
+
+</html>
